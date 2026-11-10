@@ -1,5 +1,9 @@
 @echo off
-REM Runs all three models on pet_images/ to benchmark and compare architecture results
+REM Runs all three models on pet_images/ and saves benchmark results into categorized results directories
+
+REM Navigate to repository root (parent directory of this script)
+cd /d "%~dp0.."
+
 if not exist "results\resnet" mkdir "results\resnet"
 if not exist "results\alexnet" mkdir "results\alexnet"
 if not exist "results\vgg" mkdir "results\vgg"

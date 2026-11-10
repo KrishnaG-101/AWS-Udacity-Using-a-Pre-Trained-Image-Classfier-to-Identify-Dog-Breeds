@@ -1,5 +1,9 @@
 @echo off
 REM Runs all three models on uploaded_images/ to evaluate custom uploaded image classifications
+
+REM Navigate to repository root (parent directory of this script)
+cd /d "%~dp0.."
+
 if not exist "results\resnet" mkdir "results\resnet"
 if not exist "results\alexnet" mkdir "results\alexnet"
 if not exist "results\vgg" mkdir "results\vgg"

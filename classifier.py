@@ -3,14 +3,8 @@ import os
 from PIL import Image
 import torchvision.transforms as transforms
 from torch.autograd import Variable
-import torchvision.models as models
+import torchvision.models as models_module
 from torch import __version__
-
-resnet18 = models.resnet18(pretrained=True)
-alexnet = models.alexnet(pretrained=True)
-vgg16 = models.vgg16(pretrained=True)
-
-models = {'resnet': resnet18, 'alexnet': alexnet, 'vgg': vgg16}
 
 # obtain ImageNet labels
 classes_file = 'imagenet1000_clsid_to_human.txt'
@@ -19,6 +13,28 @@ if not os.path.exists(classes_file):
 
 with open(classes_file) as imagenet_classes_file:
     imagenet_classes_dict = ast.literal_eval(imagenet_classes_file.read())
+
+class _LazyModelDict(dict):
+    """
+    Lazy-loads pre-trained torchvision CNN models on demand.
+    Prevents eager download of all model architectures at module import time.
+    """
+    def __getitem__(self, key):
+        if not dict.__contains__(self, key):
+            if key == 'resnet':
+                dict.__setitem__(self, 'resnet', models_module.resnet18(pretrained=True))
+            elif key == 'alexnet':
+                dict.__setitem__(self, 'alexnet', models_module.alexnet(pretrained=True))
+            elif key == 'vgg':
+                dict.__setitem__(self, 'vgg', models_module.vgg16(pretrained=True))
+            else:
+                raise KeyError(f"Unsupported model architecture: {key}")
+        return dict.__getitem__(self, key)
+
+    def __contains__(self, key):
+        return key in ('resnet', 'alexnet', 'vgg')
+
+models = _LazyModelDict()
 
 def classifier(img_path, model_name):
     # load the image

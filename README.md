@@ -30,10 +30,11 @@ Developed as part of the **AWS Udacity AI Programming with Python / Future AI Pr
 - [Setup & Execution Guide](#setup--execution-guide)
   - [Prerequisites](#prerequisites)
   - [Step 1: Environment Setup](#step-1-environment-setup)
-  - [Step 2: Single Model Execution](#step-2-single-model-execution)
-  - [Step 3: Automated Batch Benchmarking](#step-3-automated-batch-benchmarking)
-  - [Step 4: Custom Image Testing](#step-4-custom-image-testing)
-  - [Step 5: Lab Verification & Unit Checks](#step-5-lab-verification--unit-checks)
+  - [Step 2: Install Dependencies](#step-2-install-dependencies)
+  - [Step 3: Single Model Execution](#step-3-single-model-execution)
+  - [Step 4: Automated Batch Benchmarking](#step-4-automated-batch-benchmarking)
+  - [Step 5: Custom Image Testing](#step-5-custom-image-testing)
+  - [Step 6: Lab Verification & Unit Checks](#step-6-lab-verification--unit-checks)
 - [Udacity Rubric & Specifications Checklist](#udacity-rubric--specifications-checklist)
 - [Academic Integrity & Honor Code](#academic-integrity--honor-code)
 - [License](#license)
@@ -336,13 +337,6 @@ In addition to the 40 pet images, four custom uploaded images were tested (`uplo
 ├── print_results.py                            # Stage 6: Formatted diagnostic reporter ⭐
 ├── test_classifier.py                          # Classifier inference standalone verification
 │
-├── run_models_batch.sh                         # Linux/macOS batch runner for pet_images
-├── run_models_batch.bat                        # Windows CMD batch runner for pet_images
-├── run_models_batch.ps1                        # Windows PowerShell batch runner for pet_images
-├── run_models_batch_uploaded.sh                # Linux/macOS batch runner for uploaded_images
-├── run_models_batch_uploaded.bat               # Windows CMD batch runner for uploaded_images
-├── run_models_batch_uploaded.ps1               # Windows PowerShell batch runner for uploaded_images
-│
 ├── .gitignore                                  # Git exclusion patterns
 ├── CODEOWNERS                                  # Repository ownership declaration
 ├── LICENSE.md                                  # Udacity Educational Content License (CC BY-NC-ND 4.0)
@@ -402,17 +396,17 @@ Execute full multi-model benchmarks across all three architectures simultaneousl
 
 **Linux / macOS / Git Bash:**
 ```bash
-sh run_models_batch.sh
+sh scripts/run_models_batch.sh
 ```
 
 **Windows (PowerShell):**
 ```powershell
-.\run_models_batch.ps1
+.\scripts\run_models_batch.ps1
 ```
 
 **Windows (Command Prompt):**
 ```cmd
-run_models_batch.bat
+scripts\run_models_batch.bat
 ```
 
 Results are printed to the console and written directly into `results/resnet/resnet_pet-images.txt`, `results/alexnet/alexnet_pet-images.txt`, and `results/vgg/vgg_pet-images.txt`.
@@ -422,24 +416,20 @@ Benchmark the four custom uploaded images:
 
 **Linux / macOS:**
 ```bash
-sh run_models_batch_uploaded.sh
-# or: sh scripts/run_models_batch_uploaded.sh
+sh scripts/run_models_batch_uploaded.sh
 ```
 
 **Windows (PowerShell):**
 ```powershell
-.\run_models_batch_uploaded.ps1
-# or: .\scripts\run_models_batch_uploaded.ps1
+.\scripts\run_models_batch_uploaded.ps1
 ```
 
 **Windows (Command Prompt):**
 ```cmd
-run_models_batch_uploaded.bat
-# or: scripts\run_models_batch_uploaded.bat
+scripts\run_models_batch_uploaded.bat
 ```
 
 Results are saved to `results/resnet/resnet_uploaded-images.txt`, `results/alexnet/alexnet_uploaded-images.txt`, and `results/vgg/vgg_uploaded-images.txt`.
-```
 
 ### Step 6: Lab Verification & Unit Checks
 Verify standalone classifier operation:

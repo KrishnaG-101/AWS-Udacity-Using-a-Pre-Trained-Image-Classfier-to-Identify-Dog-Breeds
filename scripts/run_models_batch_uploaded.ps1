@@ -1,4 +1,9 @@
 # PowerShell batch script to benchmark all 3 CNN architectures on uploaded_images/
+
+# Navigate to repository root (parent directory of this script)
+$PSScriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+Set-Location (Join-Path $PSScriptRoot "..")
+
 $null = New-Item -ItemType Directory -Force -Path "results/resnet", "results/alexnet", "results/vgg"
 
 Write-Host "=============================================================" -ForegroundColor Cyan
