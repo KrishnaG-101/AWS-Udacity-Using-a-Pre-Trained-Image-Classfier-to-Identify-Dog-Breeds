@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 680" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="cardGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="cardGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="cardGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="cardGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="cardGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#be185d"/>
+    </linearGradient>
+    <linearGradient id="cardGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#0e7490"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1100" height="680" rx="16" fill="url(#bgGrad)"/>
+  
+  <!-- Outer Glow Border -->
+  <rect x="2" y="2" width="1096" height="676" rx="14" fill="none" stroke="#334155" stroke-width="2"/>
+
+  <!-- Header Banner -->
+  <text x="550" y="48" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc" text-anchor="middle">
+    Pre-Trained Deep CNN Dog Breed Classifier Pipeline
+  </text>
+  <text x="550" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">
+    Automated 6-Stage Computer Vision Evaluation Flow (ResNet-18 • AlexNet • VGG-16)
+  </text>
+
+  <!-- Stage 1: CLI Arguments -->
+  <g transform="translate(60, 110)" filter="url(#dropShadow)">
+    <rect width="280" height="130" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <rect width="280" height="34" rx="12" fill="url(#cardGrad1)"/>
+    <rect y="22" width="280" height="12" fill="#1d4ed8"/>
+    <text x="14" y="23" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Stage 1: CLI Parser</text>
+    <text x="266" y="23" font-family="monospace" font-size="11" fill="#bfdbfe" text-anchor="end">get_input_args.py</text>
+    <text x="14" y="60" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Argparse user input</text>
+    <text x="14" y="80" font-family="monospace" font-size="11" fill="#93c5fd">  --dir &lt;path&gt; [pet_images/]</text>
+    <text x="14" y="98" font-family="monospace" font-size="11" fill="#93c5fd">  --arch &lt;model&gt; [vgg/resnet/alexnet]</text>
+    <text x="14" y="116" font-family="monospace" font-size="11" fill="#93c5fd">  --dogfile &lt;file&gt; [dognames.txt]</text>
+  </g>
+
+  <!-- Arrow 1 to 2 -->
+  <line x1="340" y1="175" x2="410" y2="175" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Stage 2: Ground Truth Label Extraction -->
+  <g transform="translate(410, 110)" filter="url(#dropShadow)">
+    <rect width="280" height="130" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <rect width="280" height="34" rx="12" fill="url(#cardGrad2)"/>
+    <rect y="22" width="280" height="12" fill="#6d28d9"/>
+    <text x="14" y="23" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Stage 2: Label Extractor</text>
+    <text x="266" y="23" font-family="monospace" font-size="11" fill="#ddd6fe" text-anchor="end">get_pet_labels.py</text>
+    <text x="14" y="60" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Read image directory filenames</text>
+    <text x="14" y="80" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Strip digits, underscores &amp; extensions</text>
+    <text x="14" y="98" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Lowercase string normalization</text>
+    <text x="14" y="118" font-family="monospace" font-size="11" fill="#c4b5fd">  results_dic[filename] = [truth]</text>
+  </g>
+
+  <!-- Arrow 2 to 3 -->
+  <line x1="690" y1="175" x2="760" y2="175" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Stage 3: CNN Model Inference -->
+  <g transform="translate(760, 110)" filter="url(#dropShadow)">
+    <rect width="280" height="130" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <rect width="280" height="34" rx="12" fill="url(#cardGrad3)"/>
+    <rect y="22" width="280" height="12" fill="#b45309"/>
+    <text x="14" y="23" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Stage 3: CNN Classifier</text>
+    <text x="266" y="23" font-family="monospace" font-size="11" fill="#fef3c7" text-anchor="end">classify_images.py</text>
+    <text x="14" y="58" font-family="sans-serif" font-size="12" fill="#cbd5e1">• PyTorch Tensor Preprocessing</text>
+    <text x="14" y="76" font-family="sans-serif" font-size="11" fill="#fde68a">  (Resize 256, Crop 224, Normalize)</text>
+    <text x="14" y="96" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Forward Pass (ResNet/AlexNet/VGG)</text>
+    <text x="14" y="118" font-family="monospace" font-size="11" fill="#fde68a">  results_dic: [truth, pred, match]</text>
+  </g>
+
+  <!-- Connecting Bus Downward from Stage 3 to Stage 4 -->
+  <path d="M 900 240 L 900 320 L 200 320 L 200 370" fill="none" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Stage 4: Dog Name Domain Verification -->
+  <g transform="translate(60, 370)" filter="url(#dropShadow)">
+    <rect width="280" height="145" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <rect width="280" height="34" rx="12" fill="url(#cardGrad4)"/>
+    <rect y="22" width="280" height="12" fill="#047857"/>
+    <text x="14" y="23" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Stage 4: "Is-A-Dog" Check</text>
+    <text x="266" y="23" font-family="monospace" font-size="11" fill="#a7f3d0" text-anchor="end">adjust_results4_isadog.py</text>
+    <text x="14" y="58" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Ingest dognames.txt lookup file</text>
+    <text x="14" y="78" font-family="sans-serif" font-size="12" fill="#cbd5e1">• O(1) Hash Map membership match</text>
+    <text x="14" y="98" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Tag true image is-dog (0 or 1)</text>
+    <text x="14" y="118" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Tag predicted label is-dog (0 or 1)</text>
+    <text x="14" y="136" font-family="monospace" font-size="10.5" fill="#6ee7b7">  results_dic: [.., is_dog, pred_dog]</text>
+  </g>
+
+  <!-- Arrow 4 to 5 -->
+  <line x1="340" y1="442" x2="410" y2="442" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Stage 5: Calculate Results Statistics -->
+  <g transform="translate(410, 370)" filter="url(#dropShadow)">
+    <rect width="280" height="145" rx="12" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+    <rect width="280" height="34" rx="12" fill="url(#cardGrad5)"/>
+    <rect y="22" width="280" height="12" fill="#be185d"/>
+    <text x="14" y="23" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Stage 5: Metrics Aggregator</text>
+    <text x="266" y="23" font-family="monospace" font-size="11" fill="#fbcfe8" text-anchor="end">calculates_results_stats.py</text>
+    <text x="14" y="58" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Aggregates counts (n_dogs, n_match)</text>
+    <text x="14" y="78" font-family="sans-serif" font-size="12" fill="#cbd5e1">• % Correct Dogs (n_corr_dog/n_dog)</text>
+    <text x="14" y="98" font-family="sans-serif" font-size="12" fill="#cbd5e1">• % Correct Breeds (n_breed/n_dog)</text>
+    <text x="14" y="118" font-family="sans-serif" font-size="12" fill="#cbd5e1">• % Correct Non-Dogs &amp; Overall Matches</text>
+    <text x="14" y="136" font-family="monospace" font-size="10.5" fill="#f472b6">  results_stats_dic = {pct_*, n_*}</text>
+  </g>
+
+  <!-- Arrow 5 to 6 -->
+  <line x1="690" y1="442" x2="760" y2="442" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Stage 6: Formatted Reporting & Diagnostics -->
+  <g transform="translate(760, 370)" filter="url(#dropShadow)">
+    <rect width="280" height="145" rx="12" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <rect width="280" height="34" rx="12" fill="url(#cardGrad6)"/>
+    <rect y="22" width="280" height="12" fill="#0e7490"/>
+    <text x="14" y="23" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Stage 6: Console Reporter</text>
+    <text x="266" y="23" font-family="monospace" font-size="11" fill="#cffafe" text-anchor="end">print_results.py</text>
+    <text x="14" y="58" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Formatted metric summary tables</text>
+    <text x="14" y="78" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Filter &amp; print Dog / Not-Dog errors</text>
+    <text x="14" y="98" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Filter &amp; print Breed misclassifications</text>
+    <text x="14" y="118" font-family="sans-serif" font-size="12" fill="#cbd5e1">• End-to-end elapsed runtime</text>
+    <text x="14" y="136" font-family="monospace" font-size="10.5" fill="#67e8f9">  Output: Console / &lt;model&gt;.txt</text>
+  </g>
+
+  <!-- Footer Indicator -->
+  <g transform="translate(60, 560)">
+    <rect width="980" height="75" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+    <text x="24" y="30" font-family="sans-serif" font-size="13" font-weight="bold" fill="#38bdf8">Supported Models &amp; Benchmarking Targets:</text>
+    <text x="24" y="55" font-family="sans-serif" font-size="12" fill="#94a3b8">
+      • <tspan fill="#ffffff" font-weight="bold">VGG-16</tspan> (93.3% Breed Acc, 100% Dog Acc, 20s latency) • <tspan fill="#ffffff" font-weight="bold">ResNet-18</tspan> (90.0% Breed Acc, 100% Dog Acc, 5s latency) • <tspan fill="#ffffff" font-weight="bold">AlexNet</tspan> (80.0% Breed Acc, 100% Dog Acc, 3s latency)
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 580" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="vggGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="resnetGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="alexnetGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <filter id="shadowFilter" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="580" rx="16" fill="url(#bgGrad2)"/>
+  <rect x="2" y="2" width="1096" height="576" rx="14" fill="none" stroke="#334155" stroke-width="2"/>
+
+  <!-- Title Header -->
+  <text x="550" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc" text-anchor="middle">
+    CNN Architecture Benchmark: VGG-16 vs. ResNet-18 vs. AlexNet
+  </text>
+  <text x="550" y="70" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">
+    Empirical Comparison Across 40 Pet Images (30 Dog Images • 10 Non-Dog Images)
+  </text>
+
+  <!-- Left Column: Accuracy Metrics -->
+  <g transform="translate(60, 110)" filter="url(#shadowFilter)">
+    <rect width="470" height="420" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <text x="24" y="36" font-family="sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">Classification Accuracy Metrics (%)</text>
+    <text x="24" y="56" font-family="sans-serif" font-size="12" fill="#94a3b8">Higher is better • Benchmark on Pet Images Dataset</text>
+
+    <!-- Metric 1: % Correct Breed -->
+    <text x="24" y="95" font-family="sans-serif" font-size="13" font-weight="600" fill="#e2e8f0">Correct Dog Breed Identification</text>
+    
+    <!-- VGG: 93.3% -->
+    <text x="24" y="120" font-family="sans-serif" font-size="11" fill="#94a3b8">VGG-16</text>
+    <rect x="90" y="108" width="300" height="15" rx="4" fill="#334155"/>
+    <rect x="90" y="108" width="280" height="15" rx="4" fill="url(#vggGrad)"/>
+    <text x="400" y="120" font-family="sans-serif" font-size="12" font-weight="bold" fill="#34d399">93.3%</text>
+
+    <!-- ResNet: 90.0% -->
+    <text x="24" y="142" font-family="sans-serif" font-size="11" fill="#94a3b8">ResNet-18</text>
+    <rect x="90" y="130" width="300" height="15" rx="4" fill="#334155"/>
+    <rect x="90" y="130" width="270" height="15" rx="4" fill="url(#resnetGrad)"/>
+    <text x="400" y="142" font-family="sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">90.0%</text>
+
+    <!-- AlexNet: 80.0% -->
+    <text x="24" y="164" font-family="sans-serif" font-size="11" fill="#94a3b8">AlexNet</text>
+    <rect x="90" y="152" width="300" height="15" rx="4" fill="#334155"/>
+    <rect x="90" y="152" width="240" height="15" rx="4" fill="url(#alexnetGrad)"/>
+    <text x="400" y="164" font-family="sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">80.0%</text>
+
+    <!-- Metric 2: % Overall Label Match -->
+    <text x="24" y="205" font-family="sans-serif" font-size="13" font-weight="600" fill="#e2e8f0">Overall Label Match (Strict)</text>
+    
+    <!-- VGG: 87.5% -->
+    <text x="24" y="230" font-family="sans-serif" font-size="11" fill="#94a3b8">VGG-16</text>
+    <rect x="90" y="218" width="300" height="15" rx="4" fill="#334155"/>
+    <rect x="90" y="218" width="262.5" height="15" rx="4" fill="url(#vggGrad)"/>
+    <text x="400" y="230" font-family="sans-serif" font-size="12" font-weight="bold" fill="#34d399">87.5%</text>
+
+    <!-- ResNet: 82.5% -->
+    <text x="24" y="252" font-family="sans-serif" font-size="11" fill="#94a3b8">ResNet-18</text>
+    <rect x="90" y="240" width="300" height="15" rx="4" fill="#334155"/>
+    <rect x="90" y="240" width="247.5" height="15" rx="4" fill="url(#resnetGrad)"/>
+    <text x="400" y="252" font-family="sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">82.5%</text>
+
+    <!-- AlexNet: 75.0% -->
+    <text x="24" y="274" font-family="sans-serif" font-size="11" fill="#94a3b8">AlexNet</text>
+    <rect x="90" y="262" width="300" height="15" rx="4" fill="#334155"/>
+    <rect x="90" y="262" width="225" height="15" rx="4" fill="url(#alexnetGrad)"/>
+    <text x="400" y="274" font-family="sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">75.0%</text>
+
+    <!-- Metric 3: % Correct Dogs / Not-Dogs -->
+    <text x="24" y="315" font-family="sans-serif" font-size="13" font-weight="600" fill="#e2e8f0">Correct Dog / Non-Dog Classification</text>
+    <text x="24" y="342" font-family="sans-serif" font-size="12" fill="#cbd5e1">• VGG-16: <tspan fill="#34d399" font-weight="bold">100%</tspan> Dogs (30/30) • <tspan fill="#34d399" font-weight="bold">100%</tspan> Non-Dogs (10/10)</text>
+    <text x="24" y="366" font-family="sans-serif" font-size="12" fill="#cbd5e1">• AlexNet: <tspan fill="#fbbf24" font-weight="bold">100%</tspan> Dogs (30/30) • <tspan fill="#fbbf24" font-weight="bold">100%</tspan> Non-Dogs (10/10)</text>
+    <text x="24" y="390" font-family="sans-serif" font-size="12" fill="#cbd5e1">• ResNet-18: <tspan fill="#60a5fa" font-weight="bold">100%</tspan> Dogs (30/30) • <tspan fill="#f87171" font-weight="bold">90%</tspan> Non-Dogs (1 Cat misclassified)</text>
+  </g>
+
+  <!-- Right Column: Latency & Engineering Verdict -->
+  <g transform="translate(570, 110)" filter="url(#shadowFilter)">
+    <rect width="470" height="420" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <text x="24" y="36" font-family="sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">Inference Latency &amp; Resource Efficiency</text>
+    <text x="24" y="56" font-family="sans-serif" font-size="12" fill="#94a3b8">Elapsed Runtime (Seconds) • Lower is faster</text>
+
+    <!-- Runtime Bars -->
+    <!-- AlexNet: 3s -->
+    <text x="24" y="105" font-family="sans-serif" font-size="12" fill="#e2e8f0">AlexNet (Lightweight)</text>
+    <rect x="24" y="116" width="320" height="20" rx="4" fill="#334155"/>
+    <rect x="24" y="116" width="48" height="20" rx="4" fill="url(#alexnetGrad)"/>
+    <text x="82" y="131" font-family="sans-serif" font-size="12" font-weight="bold" fill="#fbbf24">3 seconds (Fastest)</text>
+
+    <!-- ResNet-18: 5s -->
+    <text x="24" y="165" font-family="sans-serif" font-size="12" fill="#e2e8f0">ResNet-18 (Residual Skips)</text>
+    <rect x="24" y="176" width="320" height="20" rx="4" fill="#334155"/>
+    <rect x="24" y="176" width="80" height="20" rx="4" fill="url(#resnetGrad)"/>
+    <text x="114" y="191" font-family="sans-serif" font-size="12" font-weight="bold" fill="#60a5fa">5 seconds (Optimal Balance)</text>
+
+    <!-- VGG-16: 20s -->
+    <text x="24" y="225" font-family="sans-serif" font-size="12" fill="#e2e8f0">VGG-16 (Deep 16-Layer Conv)</text>
+    <rect x="24" y="236" width="320" height="20" rx="4" fill="#334155"/>
+    <rect x="24" y="236" width="320" height="20" rx="4" fill="url(#vggGrad)"/>
+    <text x="354" y="251" font-family="sans-serif" font-size="12" font-weight="bold" fill="#34d399">20 seconds</text>
+
+    <!-- Architectural Insights Card -->
+    <g transform="translate(20, 280)">
+      <rect width="430" height="120" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+      <text x="14" y="24" font-family="sans-serif" font-size="12" font-weight="bold" fill="#38bdf8">Engineering Takeaways &amp; Architectural Recommendation:</text>
+      <text x="14" y="46" font-family="sans-serif" font-size="11" fill="#cbd5e1">
+        • <tspan fill="#34d399" font-weight="600">Top Accuracy:</tspan> VGG-16 achieves the highest breed accuracy (93.3%)
+      </text>
+      <text x="24" y="62" font-family="sans-serif" font-size="11" fill="#94a3b8">
+        and zero false dog/non-dog positives, but incurs 4x latency of ResNet.
+      </text>
+      <text x="14" y="82" font-family="sans-serif" font-size="11" fill="#60a5fa">
+        • <tspan font-weight="600">Production Sweet Spot:</tspan> ResNet-18 delivers 90.0% breed accuracy
+      </text>
+      <text x="24" y="98" font-family="sans-serif" font-size="11" fill="#94a3b8">
+        at only 5s runtime—75% lower compute cost with minimal accuracy loss.
+      </text>
+    </g>
+  </g>
+</svg>
