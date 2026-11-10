@@ -297,14 +297,25 @@ In addition to the 40 pet images, four custom uploaded images were tested (`uplo
 │   ├── cat_01.jpg
 │   └── ...
 │
-├── results/                                    # Persistent model evaluation outputs
-│   ├── alexnet_pet-images.txt                  # AlexNet benchmark output (pet_images)
-│   ├── resnet_pet-images.txt                   # ResNet-18 benchmark output (pet_images)
-│   ├── vgg_pet-images.txt                      # VGG-16 benchmark output (pet_images)
-│   ├── alexnet_uploaded-images.txt             # AlexNet output on uploaded_images
-│   ├── resnet_uploaded-images.txt              # ResNet-18 output on uploaded_images
-│   ├── vgg_uploaded-images.txt                 # VGG-16 output on uploaded_images
+├── results/                                    # Categorized model evaluation outputs
+│   ├── alexnet/                                # AlexNet benchmark outputs
+│   │   ├── alexnet_pet-images.txt              # Pet images benchmark (75.0% match, 80.0% breed)
+│   │   └── alexnet_uploaded-images.txt         # Uploaded images benchmark (4 images)
+│   ├── resnet/                                 # ResNet-18 benchmark outputs
+│   │   ├── resnet_pet-images.txt               # Pet images benchmark (82.5% match, 90.0% breed)
+│   │   └── resnet_uploaded-images.txt          # Uploaded images benchmark (4 images)
+│   ├── vgg/                                    # VGG-16 benchmark outputs
+│   │   ├── vgg_pet-images.txt                  # Pet images benchmark (87.5% match, 93.3% breed)
+│   │   └── vgg_uploaded-images.txt             # Uploaded images benchmark (4 images)
 │   └── check_images.txt                        # Uploaded image Q&A analysis & reflection
+│
+├── scripts/                                    # Cross-platform batch benchmark scripts
+│   ├── run_models_batch.sh                     # Linux/macOS batch runner for pet_images
+│   ├── run_models_batch.bat                    # Windows CMD batch runner for pet_images
+│   ├── run_models_batch.ps1                    # Windows PowerShell batch runner for pet_images
+│   ├── run_models_batch_uploaded.sh            # Linux/macOS batch runner for uploaded_images
+│   ├── run_models_batch_uploaded.bat           # Windows CMD batch runner for uploaded_images
+│   └── run_models_batch_uploaded.ps1           # Windows PowerShell batch runner for uploaded_images
 │
 ├── uploaded_images/                            # Custom user-uploaded test set
 │   ├── Dog_01.jpg                              # Golden Retriever sample 1
@@ -404,7 +415,7 @@ sh run_models_batch.sh
 run_models_batch.bat
 ```
 
-Results are printed to the console and written to `resnet_pet-images.txt`, `alexnet_pet-images.txt`, and `vgg_pet-images.txt`.
+Results are printed to the console and written directly into `results/resnet/resnet_pet-images.txt`, `results/alexnet/alexnet_pet-images.txt`, and `results/vgg/vgg_pet-images.txt`.
 
 ### Step 5: Custom Image Testing
 Benchmark the four custom uploaded images:
@@ -412,16 +423,22 @@ Benchmark the four custom uploaded images:
 **Linux / macOS:**
 ```bash
 sh run_models_batch_uploaded.sh
+# or: sh scripts/run_models_batch_uploaded.sh
 ```
 
 **Windows (PowerShell):**
 ```powershell
 .\run_models_batch_uploaded.ps1
+# or: .\scripts\run_models_batch_uploaded.ps1
 ```
 
 **Windows (Command Prompt):**
 ```cmd
 run_models_batch_uploaded.bat
+# or: scripts\run_models_batch_uploaded.bat
+```
+
+Results are saved to `results/resnet/resnet_uploaded-images.txt`, `results/alexnet/alexnet_uploaded-images.txt`, and `results/vgg/vgg_uploaded-images.txt`.
 ```
 
 ### Step 6: Lab Verification & Unit Checks
@@ -459,3 +476,4 @@ All algorithmic implementations within `get_input_args.py`, `get_pet_labels.py`,
 ## License
 
 This project is distributed under the terms of the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)** License. See [LICENSE.md](LICENSE.md) for complete details.
+

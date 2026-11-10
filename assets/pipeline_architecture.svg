@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 680" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0f172a"/>
@@ -29,132 +29,167 @@
       <stop offset="100%" stop-color="#0e7490"/>
     </linearGradient>
     <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+      <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#000000" flood-opacity="0.45"/>
     </filter>
     <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 8 5 L 0 9 z" fill="#94a3b8"/>
     </marker>
-    <marker id="arrowAmber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1 L 8 5 L 0 9 z" fill="#f59e0b"/>
-    </marker>
   </defs>
 
   <!-- Background Canvas -->
-  <rect width="1100" height="680" rx="16" fill="url(#bgGrad)"/>
-  
-  <!-- Outer Glow Border -->
-  <rect x="2" y="2" width="1096" height="676" rx="14" fill="none" stroke="#334155" stroke-width="2"/>
+  <rect width="1200" height="750" rx="16" fill="url(#bgGrad)"/>
+  <rect x="2" y="2" width="1196" height="746" rx="14" fill="none" stroke="#334155" stroke-width="2"/>
 
   <!-- Header Banner -->
-  <text x="550" y="48" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc" text-anchor="middle">
+  <text x="600" y="46" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc" text-anchor="middle">
     Pre-Trained Deep CNN Dog Breed Classifier Pipeline
   </text>
-  <text x="550" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">
+  <text x="600" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" fill="#94a3b8" text-anchor="middle">
     Automated 6-Stage Computer Vision Evaluation Flow (ResNet-18 • AlexNet • VGG-16)
   </text>
 
-  <!-- Stage 1: CLI Arguments -->
-  <g transform="translate(60, 110)" filter="url(#dropShadow)">
-    <rect width="280" height="130" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
-    <rect width="280" height="34" rx="12" fill="url(#cardGrad1)"/>
-    <rect y="22" width="280" height="12" fill="#1d4ed8"/>
-    <text x="14" y="23" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Stage 1: CLI Parser</text>
-    <text x="266" y="23" font-family="monospace" font-size="11" fill="#bfdbfe" text-anchor="end">get_input_args.py</text>
-    <text x="14" y="60" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Argparse user input</text>
-    <text x="14" y="80" font-family="monospace" font-size="11" fill="#93c5fd">  --dir &lt;path&gt; [pet_images/]</text>
-    <text x="14" y="98" font-family="monospace" font-size="11" fill="#93c5fd">  --arch &lt;model&gt; [vgg/resnet/alexnet]</text>
-    <text x="14" y="116" font-family="monospace" font-size="11" fill="#93c5fd">  --dogfile &lt;file&gt; [dognames.txt]</text>
+  <!-- ==================== ROW 1: STAGES 1, 2, 3 ==================== -->
+
+  <!-- STAGE 1: CLI ARGUMENTS -->
+  <g transform="translate(50, 110)" filter="url(#dropShadow)">
+    <rect width="330" height="175" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <!-- Card Header -->
+    <rect width="330" height="38" rx="12" fill="url(#cardGrad1)"/>
+    <rect y="26" width="330" height="12" fill="#1d4ed8"/>
+    <text x="16" y="25" font-family="sans-serif" font-size="14.5" font-weight="bold" fill="#ffffff">Stage 1: CLI Configuration</text>
+    
+    <!-- Script File Pill (Dedicated Sub-Row) -->
+    <rect x="16" y="48" width="185" height="22" rx="4" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
+    <text x="24" y="63" font-family="'Cascadia Code', Consolas, monospace" font-size="11.5" font-weight="600" fill="#93c5fd">📄 get_input_args.py</text>
+    
+    <!-- Bullet Points -->
+    <text x="16" y="93" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Argparse terminal user parameters</text>
+    <text x="16" y="113" font-family="'Cascadia Code', Consolas, monospace" font-size="11" fill="#bfdbfe">  --dir &lt;path&gt; [pet_images/]</text>
+    <text x="16" y="131" font-family="'Cascadia Code', Consolas, monospace" font-size="11" fill="#bfdbfe">  --arch &lt;model&gt; [vgg/resnet/alexnet]</text>
+    <text x="16" y="149" font-family="'Cascadia Code', Consolas, monospace" font-size="11" fill="#bfdbfe">  --dogfile &lt;file&gt; [dognames.txt]</text>
   </g>
 
-  <!-- Arrow 1 to 2 -->
-  <line x1="340" y1="175" x2="410" y2="175" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <!-- Connector: 1 to 2 -->
+  <line x1="380" y1="197" x2="435" y2="197" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
 
-  <!-- Stage 2: Ground Truth Label Extraction -->
-  <g transform="translate(410, 110)" filter="url(#dropShadow)">
-    <rect width="280" height="130" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
-    <rect width="280" height="34" rx="12" fill="url(#cardGrad2)"/>
-    <rect y="22" width="280" height="12" fill="#6d28d9"/>
-    <text x="14" y="23" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Stage 2: Label Extractor</text>
-    <text x="266" y="23" font-family="monospace" font-size="11" fill="#ddd6fe" text-anchor="end">get_pet_labels.py</text>
-    <text x="14" y="60" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Read image directory filenames</text>
-    <text x="14" y="80" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Strip digits, underscores &amp; extensions</text>
-    <text x="14" y="98" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Lowercase string normalization</text>
-    <text x="14" y="118" font-family="monospace" font-size="11" fill="#c4b5fd">  results_dic[filename] = [truth]</text>
+  <!-- STAGE 2: PET IMAGE LABELS -->
+  <g transform="translate(435, 110)" filter="url(#dropShadow)">
+    <rect width="330" height="175" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <!-- Card Header -->
+    <rect width="330" height="38" rx="12" fill="url(#cardGrad2)"/>
+    <rect y="26" width="330" height="12" fill="#6d28d9"/>
+    <text x="16" y="25" font-family="sans-serif" font-size="14.5" font-weight="bold" fill="#ffffff">Stage 2: Label Extraction</text>
+    
+    <!-- Script File Pill -->
+    <rect x="16" y="48" width="185" height="22" rx="4" fill="#0f172a" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="24" y="63" font-family="'Cascadia Code', Consolas, monospace" font-size="11.5" font-weight="600" fill="#c4b5fd">📄 get_pet_labels.py</text>
+    
+    <!-- Bullet Points -->
+    <text x="16" y="93" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Read images from directory</text>
+    <text x="16" y="113" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Filter underscores &amp; numeric IDs</text>
+    <text x="16" y="133" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Lowercase string normalization</text>
+    <text x="16" y="153" font-family="'Cascadia Code', Consolas, monospace" font-size="11" fill="#ddd6fe">  results_dic[file] = [pet_label]</text>
   </g>
 
-  <!-- Arrow 2 to 3 -->
-  <line x1="690" y1="175" x2="760" y2="175" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <!-- Connector: 2 to 3 -->
+  <line x1="765" y1="197" x2="820" y2="197" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
 
-  <!-- Stage 3: CNN Model Inference -->
-  <g transform="translate(760, 110)" filter="url(#dropShadow)">
-    <rect width="280" height="130" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
-    <rect width="280" height="34" rx="12" fill="url(#cardGrad3)"/>
-    <rect y="22" width="280" height="12" fill="#b45309"/>
-    <text x="14" y="23" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Stage 3: CNN Classifier</text>
-    <text x="266" y="23" font-family="monospace" font-size="11" fill="#fef3c7" text-anchor="end">classify_images.py</text>
-    <text x="14" y="58" font-family="sans-serif" font-size="12" fill="#cbd5e1">• PyTorch Tensor Preprocessing</text>
-    <text x="14" y="76" font-family="sans-serif" font-size="11" fill="#fde68a">  (Resize 256, Crop 224, Normalize)</text>
-    <text x="14" y="96" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Forward Pass (ResNet/AlexNet/VGG)</text>
-    <text x="14" y="118" font-family="monospace" font-size="11" fill="#fde68a">  results_dic: [truth, pred, match]</text>
+  <!-- STAGE 3: CNN CLASSIFIER -->
+  <g transform="translate(820, 110)" filter="url(#dropShadow)">
+    <rect width="330" height="175" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <!-- Card Header -->
+    <rect width="330" height="38" rx="12" fill="url(#cardGrad3)"/>
+    <rect y="26" width="330" height="12" fill="#b45309"/>
+    <text x="16" y="25" font-family="sans-serif" font-size="14.5" font-weight="bold" fill="#ffffff">Stage 3: CNN Classification</text>
+    
+    <!-- Script File Pill -->
+    <rect x="16" y="48" width="230" height="22" rx="4" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+    <text x="24" y="63" font-family="'Cascadia Code', Consolas, monospace" font-size="11.5" font-weight="600" fill="#fde68a">📄 classify_images.py / classifier</text>
+    
+    <!-- Bullet Points -->
+    <text x="16" y="93" font-family="sans-serif" font-size="12" fill="#cbd5e1">• PyTorch tensor transform (224×224)</text>
+    <text x="16" y="113" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Model evaluation (ResNet/AlexNet/VGG)</text>
+    <text x="16" y="133" font-family="sans-serif" font-size="12" fill="#cbd5e1">• ImageNet class ID to label mapping</text>
+    <text x="16" y="153" font-family="'Cascadia Code', Consolas, monospace" font-size="11" fill="#fde68a">  results_dic: [truth, pred, match]</text>
   </g>
 
   <!-- Connecting Bus Downward from Stage 3 to Stage 4 -->
-  <path d="M 900 240 L 900 320 L 200 320 L 200 370" fill="none" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M 985 285 L 985 340 L 215 340 L 215 385" fill="none" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
 
-  <!-- Stage 4: Dog Name Domain Verification -->
-  <g transform="translate(60, 370)" filter="url(#dropShadow)">
-    <rect width="280" height="145" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
-    <rect width="280" height="34" rx="12" fill="url(#cardGrad4)"/>
-    <rect y="22" width="280" height="12" fill="#047857"/>
-    <text x="14" y="23" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Stage 4: "Is-A-Dog" Check</text>
-    <text x="266" y="23" font-family="monospace" font-size="11" fill="#a7f3d0" text-anchor="end">adjust_results4_isadog.py</text>
-    <text x="14" y="58" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Ingest dognames.txt lookup file</text>
-    <text x="14" y="78" font-family="sans-serif" font-size="12" fill="#cbd5e1">• O(1) Hash Map membership match</text>
-    <text x="14" y="98" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Tag true image is-dog (0 or 1)</text>
-    <text x="14" y="118" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Tag predicted label is-dog (0 or 1)</text>
-    <text x="14" y="136" font-family="monospace" font-size="10.5" fill="#6ee7b7">  results_dic: [.., is_dog, pred_dog]</text>
+  <!-- ==================== ROW 2: STAGES 4, 5, 6 ==================== -->
+
+  <!-- STAGE 4: IS-A-DOG VERIFICATION -->
+  <g transform="translate(50, 385)" filter="url(#dropShadow)">
+    <rect width="330" height="185" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <!-- Card Header -->
+    <rect width="330" height="38" rx="12" fill="url(#cardGrad4)"/>
+    <rect y="26" width="330" height="12" fill="#047857"/>
+    <text x="16" y="25" font-family="sans-serif" font-size="14.5" font-weight="bold" fill="#ffffff">Stage 4: "Is-A-Dog" Verification</text>
+    
+    <!-- Script File Pill -->
+    <rect x="16" y="48" width="220" height="22" rx="4" fill="#0f172a" stroke="#10b981" stroke-width="1"/>
+    <text x="24" y="63" font-family="'Cascadia Code', Consolas, monospace" font-size="11.5" font-weight="600" fill="#6ee7b7">📄 adjust_results4_isadog.py</text>
+    
+    <!-- Bullet Points -->
+    <text x="16" y="93" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Ingest dognames.txt dictionary</text>
+    <text x="16" y="113" font-family="sans-serif" font-size="12" fill="#cbd5e1">• O(1) hash map membership check</text>
+    <text x="16" y="133" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Flag true label: dog=1, non-dog=0</text>
+    <text x="16" y="153" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Flag predicted label: dog=1, non-dog=0</text>
+    <text x="16" y="171" font-family="'Cascadia Code', Consolas, monospace" font-size="10.5" fill="#a7f3d0">  results_dic: [.., is_dog, pred_dog]</text>
   </g>
 
-  <!-- Arrow 4 to 5 -->
-  <line x1="340" y1="442" x2="410" y2="442" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <!-- Connector: 4 to 5 -->
+  <line x1="380" y1="477" x2="435" y2="477" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
 
-  <!-- Stage 5: Calculate Results Statistics -->
-  <g transform="translate(410, 370)" filter="url(#dropShadow)">
-    <rect width="280" height="145" rx="12" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
-    <rect width="280" height="34" rx="12" fill="url(#cardGrad5)"/>
-    <rect y="22" width="280" height="12" fill="#be185d"/>
-    <text x="14" y="23" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Stage 5: Metrics Aggregator</text>
-    <text x="266" y="23" font-family="monospace" font-size="11" fill="#fbcfe8" text-anchor="end">calculates_results_stats.py</text>
-    <text x="14" y="58" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Aggregates counts (n_dogs, n_match)</text>
-    <text x="14" y="78" font-family="sans-serif" font-size="12" fill="#cbd5e1">• % Correct Dogs (n_corr_dog/n_dog)</text>
-    <text x="14" y="98" font-family="sans-serif" font-size="12" fill="#cbd5e1">• % Correct Breeds (n_breed/n_dog)</text>
-    <text x="14" y="118" font-family="sans-serif" font-size="12" fill="#cbd5e1">• % Correct Non-Dogs &amp; Overall Matches</text>
-    <text x="14" y="136" font-family="monospace" font-size="10.5" fill="#f472b6">  results_stats_dic = {pct_*, n_*}</text>
+  <!-- STAGE 5: CALCULATE RESULTS STATS -->
+  <g transform="translate(435, 385)" filter="url(#dropShadow)">
+    <rect width="330" height="185" rx="12" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+    <!-- Card Header -->
+    <rect width="330" height="38" rx="12" fill="url(#cardGrad5)"/>
+    <rect y="26" width="330" height="12" fill="#be185d"/>
+    <text x="16" y="25" font-family="sans-serif" font-size="14.5" font-weight="bold" fill="#ffffff">Stage 5: Metrics Aggregation</text>
+    
+    <!-- Script File Pill -->
+    <rect x="16" y="48" width="230" height="22" rx="4" fill="#0f172a" stroke="#ec4899" stroke-width="1"/>
+    <text x="24" y="63" font-family="'Cascadia Code', Consolas, monospace" font-size="11.5" font-weight="600" fill="#f472b6">📄 calculates_results_stats.py</text>
+    
+    <!-- Bullet Points -->
+    <text x="16" y="93" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Count n_images, n_dogs, n_notdogs</text>
+    <text x="16" y="113" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Compute % correct dogs (n_dogs/tot)</text>
+    <text x="16" y="133" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Compute % correct breeds (n_breed/n_dog)</text>
+    <text x="16" y="153" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Defensive ZeroDivisionError guards</text>
+    <text x="16" y="171" font-family="'Cascadia Code', Consolas, monospace" font-size="10.5" fill="#fbcfe8">  results_stats_dic = {pct_*, n_*}</text>
   </g>
 
-  <!-- Arrow 5 to 6 -->
-  <line x1="690" y1="442" x2="760" y2="442" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <!-- Connector: 5 to 6 -->
+  <line x1="765" y1="477" x2="820" y2="477" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrow)"/>
 
-  <!-- Stage 6: Formatted Reporting & Diagnostics -->
-  <g transform="translate(760, 370)" filter="url(#dropShadow)">
-    <rect width="280" height="145" rx="12" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
-    <rect width="280" height="34" rx="12" fill="url(#cardGrad6)"/>
-    <rect y="22" width="280" height="12" fill="#0e7490"/>
-    <text x="14" y="23" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Stage 6: Console Reporter</text>
-    <text x="266" y="23" font-family="monospace" font-size="11" fill="#cffafe" text-anchor="end">print_results.py</text>
-    <text x="14" y="58" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Formatted metric summary tables</text>
-    <text x="14" y="78" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Filter &amp; print Dog / Not-Dog errors</text>
-    <text x="14" y="98" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Filter &amp; print Breed misclassifications</text>
-    <text x="14" y="118" font-family="sans-serif" font-size="12" fill="#cbd5e1">• End-to-end elapsed runtime</text>
-    <text x="14" y="136" font-family="monospace" font-size="10.5" fill="#67e8f9">  Output: Console / &lt;model&gt;.txt</text>
+  <!-- STAGE 6: PRINT RESULTS -->
+  <g transform="translate(820, 385)" filter="url(#dropShadow)">
+    <rect width="330" height="185" rx="12" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <!-- Card Header -->
+    <rect width="330" height="38" rx="12" fill="url(#cardGrad6)"/>
+    <rect y="26" width="330" height="12" fill="#0e7490"/>
+    <text x="16" y="25" font-family="sans-serif" font-size="14.5" font-weight="bold" fill="#ffffff">Stage 6: Diagnostic Reporting</text>
+    
+    <!-- Script File Pill -->
+    <rect x="16" y="48" width="185" height="22" rx="4" fill="#0f172a" stroke="#06b6d4" stroke-width="1"/>
+    <text x="24" y="63" font-family="'Cascadia Code', Consolas, monospace" font-size="11.5" font-weight="600" fill="#67e8f9">📄 print_results.py</text>
+    
+    <!-- Bullet Points -->
+    <text x="16" y="93" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Formatted console summary table</text>
+    <text x="16" y="113" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Print misclassified Dog/Not-Dog cases</text>
+    <text x="16" y="133" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Print misclassified canine breeds</text>
+    <text x="16" y="153" font-family="sans-serif" font-size="12" fill="#cbd5e1">• Total elapsed program runtime</text>
+    <text x="16" y="171" font-family="'Cascadia Code', Consolas, monospace" font-size="10.5" fill="#cffafe">  Outputs: stdout &amp; results/*.txt</text>
   </g>
 
-  <!-- Footer Indicator -->
-  <g transform="translate(60, 560)">
-    <rect width="980" height="75" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-    <text x="24" y="30" font-family="sans-serif" font-size="13" font-weight="bold" fill="#38bdf8">Supported Models &amp; Benchmarking Targets:</text>
-    <text x="24" y="55" font-family="sans-serif" font-size="12" fill="#94a3b8">
-      • <tspan fill="#ffffff" font-weight="bold">VGG-16</tspan> (93.3% Breed Acc, 100% Dog Acc, 20s latency) • <tspan fill="#ffffff" font-weight="bold">ResNet-18</tspan> (90.0% Breed Acc, 100% Dog Acc, 5s latency) • <tspan fill="#ffffff" font-weight="bold">AlexNet</tspan> (80.0% Breed Acc, 100% Dog Acc, 3s latency)
+  <!-- ==================== FOOTER ==================== -->
+  <g transform="translate(50, 610)">
+    <rect width="1100" height="85" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+    <text x="24" y="32" font-family="sans-serif" font-size="13.5" font-weight="bold" fill="#38bdf8">Supported Models &amp; Benchmarking Targets:</text>
+    <text x="24" y="58" font-family="sans-serif" font-size="12.5" fill="#94a3b8">
+      • <tspan fill="#34d399" font-weight="bold">VGG-16</tspan> (93.3% Breed Acc, 100% Dog Acc, 20s latency) • <tspan fill="#60a5fa" font-weight="bold">ResNet-18</tspan> (90.0% Breed Acc, 100% Dog Acc, 5s latency) • <tspan fill="#fbbf24" font-weight="bold">AlexNet</tspan> (80.0% Breed Acc, 100% Dog Acc, 3s latency)
     </text>
   </g>
 </svg>
